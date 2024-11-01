@@ -1,21 +1,15 @@
 import s from "./Feedback.module.css";
 
-const Feedback = () => {
+const Feedback = ({ feedback, totalFeedback, positivePercentage }) => {
+  const { good, neutral, bad } = feedback;
   return (
-    <ul className={s.listFeedback}>
-      <li>
-        <button>Good</button>
-      </li>
-      <li>
-        <button>Neutral</button>
-      </li>
-      <li>
-        <button>Bad</button>
-      </li>
-      <li>
-        <button>Reset</button>
-      </li>
-    </ul>
+    <div className={s.divFeedback}>
+      <p>Good: {good} </p>
+      <p>Neutral: {neutral} </p>
+      <p>Bad: {bad} </p>
+      <p>Total: {totalFeedback} </p>
+      <p>Positive Feedback: {positivePercentage}% </p>
+    </div>
   );
 };
 

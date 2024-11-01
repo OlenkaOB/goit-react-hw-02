@@ -1,0 +1,12 @@
+.title {
+    color: black;
+    font-weight: 700;
+    font-size: 50px;
+    text-align: start;
+}
+
+.text {
+    color: black;
+    font-weight: 500;
+    font-size: 18px;
+}
