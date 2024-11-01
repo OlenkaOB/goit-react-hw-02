@@ -2,7 +2,7 @@ import s from "./Options.module.css";
 
 const Options = ({ updateFeedback, totalFeedback, resetFeedback }) => {
   return (
-    <div>
+    <div className={s.divOptions}>
       <button className={s.btn} onClick={() => updateFeedback("good")}>
         Good
       </button>
