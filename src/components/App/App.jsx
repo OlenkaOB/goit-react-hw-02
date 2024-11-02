@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import "./App.css";
-import Feedback from "../Feedback/Feedback";
-import Options from "../Options/Options";
-import Description from "../Description/Description";
-import Notification from "../Notification/Notification";
+import { useState, useEffect } from 'react';
+import './App.css';
+import Feedback from '../Feedback/Feedback';
+import Options from '../Options/Options';
+import Description from '../Description/Description';
+import Notification from '../Notification/Notification';
 
 const App = () => {
   const [feedback, setFeedback] = useState({
@@ -12,18 +12,18 @@ const App = () => {
     bad: 0,
   });
   useEffect(() => {
-    const savedFeedback = localStorage.getItem("savedFeedback");
+    const savedFeedback = localStorage.getItem('savedFeedback');
     if (savedFeedback) {
       savedFeedback(JSON.parse(savedFeedback));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("feedback", JSON.stringify(feedback));
+    localStorage.setItem('feedback', JSON.stringify(feedback));
   }, [feedback]);
 
-  const updateFeedback = (feedbackType) => {
-    setFeedback((prevFeedback) => ({
+  const updateFeedback = feedbackType => {
+    setFeedback(prevFeedback => ({
       ...prevFeedback,
       [feedbackType]: prevFeedback[feedbackType] + 1,
     }));
